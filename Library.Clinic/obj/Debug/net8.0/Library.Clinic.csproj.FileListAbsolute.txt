@@ -1,0 +1,13 @@
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/bin/Debug/net8.0/Library.Clinic.deps.json
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/bin/Debug/net8.0/Library.Clinic.dll
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/bin/Debug/net8.0/Library.Clinic.pdb
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.csproj.AssemblyReference.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.AssemblyInfoInputs.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.AssemblyInfo.cs
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.csproj.CoreCompileInputs.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.sourcelink.json
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.dll
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/refint/Library.Clinic.dll
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/Library.Clinic.pdb
+/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/obj/Debug/net8.0/ref/Library.Clinic.dll

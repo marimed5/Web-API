@@ -1,0 +1,8 @@
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.csproj.AssemblyReference.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.AssemblyInfoInputs.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.AssemblyInfo.cs
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.csproj.CoreCompileInputs.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.MvcApplicationPartsAssemblyInfo.cs
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.MvcApplicationPartsAssemblyInfo.cache
+/Users/mariyemahmed/Desktop/ClinicManagement/Api.Clinic/obj/Debug/net8.0/Api.Clinic.sourcelink.json

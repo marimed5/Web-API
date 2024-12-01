@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Clinic", "Api.Clinic\Api.Clinic.csproj", "{270695B4-ABFF-4D39-ACF1-B6254C9EE107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Clinic", "..\Library.Clinic\Library.Clinic.csproj", "{1AD63BE8-1A41-47AA-902C-E98D0A19D950}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{270695B4-ABFF-4D39-ACF1-B6254C9EE107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270695B4-ABFF-4D39-ACF1-B6254C9EE107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270695B4-ABFF-4D39-ACF1-B6254C9EE107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270695B4-ABFF-4D39-ACF1-B6254C9EE107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AD63BE8-1A41-47AA-902C-E98D0A19D950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD63BE8-1A41-47AA-902C-E98D0A19D950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD63BE8-1A41-47AA-902C-E98D0A19D950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD63BE8-1A41-47AA-902C-E98D0A19D950}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

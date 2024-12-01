@@ -1,0 +1,95 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Library.Clinic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Library.Clinic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Library.Clinic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Library.Clinic/1.0.0": {
+      "type": "project",
+      "path": "../Library.Clinic/Library.Clinic.csproj",
+      "msbuildProject": "../Library.Clinic/Library.Clinic.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Library.Clinic >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/mariyemahmed/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/mariyemahmed/Desktop/ClinicManagement/Fall2024_Example_Windows/Fall2024_Example_Windows.csproj",
+      "projectName": "Fall2024_Example_Windows",
+      "projectPath": "/Users/mariyemahmed/Desktop/ClinicManagement/Fall2024_Example_Windows/Fall2024_Example_Windows.csproj",
+      "packagesPath": "/Users/mariyemahmed/.nuget/packages/",
+      "outputPath": "/Users/mariyemahmed/Desktop/ClinicManagement/Fall2024_Example_Windows/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/mariyemahmed/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/Library.Clinic.csproj": {
+              "projectPath": "/Users/mariyemahmed/Desktop/ClinicManagement/Library.Clinic/Library.Clinic.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
