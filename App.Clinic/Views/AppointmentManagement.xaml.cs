@@ -6,13 +6,13 @@ using System.Runtime.CompilerServices;
 
 namespace App.Clinic.Views;
 
-public partial class PatientManagement : ContentPage, INotifyPropertyChanged
+public partial class AppointmentManagement : ContentPage, INotifyPropertyChanged
 {
     
-	public PatientManagement()
+	public AppointmentManagement()
 	{
 		InitializeComponent();
-		BindingContext = new PatientManagementViewModel();
+		BindingContext = new AppointmentManagementViewModel();
 	}
 
     private void CancelClicked(object sender, EventArgs e)
@@ -22,16 +22,16 @@ public partial class PatientManagement : ContentPage, INotifyPropertyChanged
 
     private void AddClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//PatientDetails?patientId=0");
+        Shell.Current.GoToAsync("//AppointmentDetails?appointmentId=0");
     }
 
-    private void PatientManagement_NavigatedTo(object sender, NavigatedToEventArgs e)
+    private void AppointmentManagement_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
-        (BindingContext as PatientManagementViewModel)?.Refresh();
+        (BindingContext as AppointmentManagementViewModel)?.Refresh();
     }
 
     private void RefreshClicked(object sender, EventArgs e)
     {
-        (BindingContext as PatientManagementViewModel)?.Refresh();
+        (BindingContext as AppointmentManagementViewModel)?.Refresh();
     }
 }

@@ -1,4 +1,4 @@
-﻿using Library.Clinic.Models;
+using Library.Clinic.Models;
 using Library.Clinic.Services;
 using System;
 using System.Collections.Generic;
@@ -9,11 +9,12 @@ using System.Windows.Input;
 
 namespace App.Clinic.ViewModels
 {
-    public class PatientViewModel
+    public class PhysicianViewModel
     {
-        public Patient? Model { get; set; }
+        private Physician? Model { get; set; }
         public ICommand? DeleteCommand { get; set; }
         public ICommand? EditCommand { get; set; }
+
         public int Id
         {
             get
@@ -46,89 +47,101 @@ namespace App.Clinic.ViewModels
             }
         }
 
-        public string InsuranceProvider
+        public string LicenseNum
         {
-            get => Model?.InsuranceProvider ?? string.Empty;
+            get => Model?.LicenseNum ?? string.Empty;
             set
             {
                 if(Model != null)
                 {
-                    Model.InsuranceProvider = value;
+                    Model.LicenseNum = value;
                 }
             }
         }
 
-        public int CoPay
+        public DateTime GradDate
         {
-            get => Model?.CoPay ?? 0;
+            get => Model?.GradDate ?? DateTime.MinValue;
             set
             {
                 if(Model != null)
                 {
-                    Model.CoPay = value;
+                    Model.GradDate = value;
+                }
+            }
+        }
+        public string Specializations
+        {
+            get => Model?.Specializations ?? string.Empty;
+            set
+            {
+                if(Model != null)
+                {
+                    Model.Specializations = value;
                 }
             }
         }
 
-        public int Coverage
+        public bool Available
         {
-            get => Model?.Coverage ?? 0;
+            get => Model?.Available ?? false;
             set
             {
                 if(Model != null)
                 {
-                    Model.Coverage = value;
+                    Model.Available = value;
                 }
             }
         }
+
 
         public void SetupCommands()
         {
             DeleteCommand = new Command(DoDelete);
-            EditCommand = new Command((p) => DoEdit(p as PatientViewModel));
+            EditCommand = new Command((p) => DoEdit(p as PhysicianViewModel));
         }
-
+        
         private void DoDelete()
         {
             if (Id > 0)
             {
-                PatientServiceProxy.Current.DeletePatient(Id);
-                Shell.Current.GoToAsync("//Patients");
+                PhysicianServiceProxy.Current.DeletePhysician(Id);
+                Shell.Current.GoToAsync("//Physicians");
             }
         }
 
-        private void DoEdit(PatientViewModel? pvm)
+        private void DoEdit(PhysicianViewModel? pvm)
         {
             if (pvm == null)
             {
                 return;
             }
-            var selectedPatientId = pvm?.Id ?? 0;
-            Shell.Current.GoToAsync($"//PatientDetails?patientId={selectedPatientId}");
+            var selectedPhysicianId = pvm?.Id ?? 0;
+            Shell.Current.GoToAsync($"//PhysicianDetails?physicianId={selectedPhysicianId}");
         }
 
-        public PatientViewModel()
-        {
-            Model = new Patient();
-            SetupCommands();
-        }
-
-        public PatientViewModel(Patient? _model)
-        {
-            Model = _model;
-            SetupCommands();
-        }
-
-        public void ExecuteAdd()
+        public async void ExecuteAdd()
         {
             if (Model != null)
             {
-                PatientServiceProxy
+                await PhysicianServiceProxy
                 .Current
-                .AddOrUpdatePatient(Model);
+                .AddOrUpdatePhysician(Model);
             }
 
-            Shell.Current.GoToAsync("//Patients");
+            await Shell.Current.GoToAsync("//Physicians");
+        }
+
+        public PhysicianViewModel()
+        {
+            Model = new Physician();
+            SetupCommands();
+        }
+
+        public PhysicianViewModel(Physician? _model)
+        {
+            Model = _model;
+            SetupCommands();
         }
     }
 }

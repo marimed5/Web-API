@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App.Clinic.Views.PatientManagement"
-             Title="PatientManagement"
-             NavigatedTo="PatientManagement_NavigatedTo"
+             x:Class="App.Clinic.Views.PhysicianManagement"
+             Title="PhysicianManagement"
+             NavigatedTo="PhysicianManagement_NavigatedTo"
              >
     <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Column="0" Text="{Binding Query}"/>
+            <Button Grid.Column="1" Text="Search" Clicked="SearchClicked"/>
+        </Grid>
         <ListView
-            ItemsSource="{Binding Patients}"
-            SelectedItem="{Binding SelectedPatient}"
+            ItemsSource="{Binding Physicians}"
+            SelectedItem="{Binding SelectedPhysician}"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -16,14 +24,14 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Label FontAttributes="Bold" Grid.Column="0" Text="{Binding Id}"/>
                             <Label Grid.Column="1" Text="{Binding Name}"/>
-                            <Label Grid.Column="2" Text="{Binding InsuranceProvider}"/>
+                            <Label Grid.Column="2" Text="{Binding Specializations}"/>
                             <Button Grid.Column="3" Text="Edit" Command="{Binding EditCommand}" CommandParameter="{Binding}"/>
                             <Button Grid.Column="4" Text="Delete" Command="{Binding DeleteCommand}" Clicked="RefreshClicked"/>
                         </Grid>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Clinic.Views.AppointmentView"
+             Title="AppointmentView"
+             NavigatedTo="AppointmentView_NavigatedTo"
+             >
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ListView
+                ItemsSource="{Binding AllPatients}"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label FontAttributes="Bold" Grid.Column="0" Text="{Binding Id}"/>
+                                <Label Grid.Column="1" Text="{Binding Name}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Grid.Column="0" Grid.Row="1" Text="Choose Patient Id from above:"/>
+            <Entry Grid.Column="1" Grid.Row="1" Text="{Binding PatientId}"/>
+
+            <ListView
+                ItemsSource="{Binding AllPhysicians}"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label FontAttributes="Bold" Grid.Column="0" Text="{Binding Id}"/>
+                                <Label Grid.Column="1" Text="{Binding Name}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Grid.Column="0" Grid.Row="3" Text="Choose Physician Id from above: " />
+            <Entry Grid.Column="1" Grid.Row="3" Text="{Binding PhysicianId}" />
+            <Label Grid.Column="0" Grid.Row="4" Text="Appointment Time: " />
+            <Entry Grid.Column="1" Grid.Row="4" Text="{Binding StartTime}" />
+            <Label Grid.Column="0" Grid.Row="5" Text="Choose Treatment: " />
+
+            <CollectionView Grid.Column="1" Grid.Row="5" ItemsSource="{Binding AllTreatments}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsSelected}"
+                                    CheckedChanged="OnCheckBoxCheckedChanged" />
+                            <Label Text="{Binding Name}" VerticalOptions="Center" />
+                            <Label Text="{Binding Price}" VerticalOptions="Center" Margin="10,0,0,0" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+        <Button
+            Text="Ok"
+            Clicked="AddClicked"
+            />
+        <Button
+            Text="Cancel"
+            Clicked="CancelClicked"
+            />
+    </VerticalStackLayout>
+</ContentPage>

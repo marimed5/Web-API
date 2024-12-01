@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Clinic.Views.AppointmentManagement"
+             Title="AppointmentManagement"
+             NavigatedTo="AppointmentManagement_NavigatedTo"
+             >
+    <VerticalStackLayout>
+        <ListView
+            ItemsSource="{Binding Appointments}"
+            SelectedItem="{Binding SelectedAppointment}"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label FontAttributes="Bold" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Id}"/>
+
+                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding PatientName}"/>
+                            <Label Grid.Column="2" Grid.Row="0" Text="with physician"/>
+                            <Label Grid.Column="3" Grid.Row="0" Text="{Binding PhysicianName}"/>
+
+                        
+                            <Label Grid.Column="4" Grid.Row="0" Text="Start Time: "/>
+                            <Label Grid.Column="5" Grid.Row="0" Text="{Binding StartTime}"/>
+
+                            <Label Grid.Column="1" Grid.Row="1" Text="Booked for: "/>
+
+                            <StackLayout Orientation="Horizontal" Grid.Column="2" Grid.Row="1" 
+                                BindableLayout.ItemsSource="{Binding AllTreatments}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout.Triggers>
+                                                <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="false">
+                                                    <Setter Property="IsVisible" Value="False" />
+                                                </DataTrigger>
+                                            </StackLayout.Triggers>
+                                            <Label Text="{Binding Name}" Margin="0,0,5,0"/>
+                                            <Label Text="{Binding Price}" Margin="0,0,5,0"/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+
+                            <Label Grid.Column="1" Grid.Row="2" Text="Total Without Insurance:"/>
+                            <Label Grid.Column="2" Grid.Row="2" Text="{Binding TotalWithout}"/>
+                            <Label Grid.Column="3" Grid.Row="2" Text="Total With Insurance:" />
+                            <Label Grid.Column="4" Grid.Row="2" Text="{Binding TotalWith}"/>
+                            <Label Grid.Column="5" Grid.Row="2" Text="Insurance Provider:" />
+                            <Label Grid.Column="6" Grid.Row="2" Text="{Binding InsuranceProvider}" />
+
+
+
+                            <Button Grid.Column="7" Grid.RowSpan="4" Text="Edit" Command="{Binding EditCommand}" CommandParameter="{Binding}"/>
+                            <Button Grid.Column="8" Grid.RowSpan="4" Text="Delete" Command="{Binding DeleteCommand}" Clicked="RefreshClicked"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add" Clicked="AddClicked"/>
+        <Button Text="Cancel" Clicked="CancelClicked" />
+    </VerticalStackLayout>
+</ContentPage>
